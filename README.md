@@ -1,4 +1,4 @@
-# TUNE YOUR GUITAR WITH MY WEBASSEMBLY APP
+# TUNE YOUR GUITAR WITH WEBASSEMBLY
 
 ![incredible cover pic](https://github.com/Franchovy/webAssembly-Audio-Tuner/blob/main/rust-tuner.png)
 
