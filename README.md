@@ -9,5 +9,5 @@ WebAssembly + Rust + Javascript / React = I'm in love.
 ### TO-DO:
 
 - [x] Finish first half of tutorial
-- [ ] Finish second half of tutorial
+- [x] Finish second half of tutorial
 - [ ] Set up app on github for public use
