@@ -1,3 +1,4 @@
+import "./TextEncoder.js";
 import init, { WasmPitchDetector } from "./wasm-audio/wasm_audio.js";
 
 
@@ -53,8 +54,8 @@ class PitchProcessor extends AudioWorkletProcessor {
             const numExistingSamples = this.samples.length - numNewSamples;
 
             // Cycle buffer by number of new samples coming in
-            for (let i = 0; i < numNewSamples; i++) {
-                this.samples[i] = inputSamples[i + numExistingSamples];
+            for (let i = 0; i < numExistingSamples; i++) {
+                this.samples[i] = this.samples[i + numNewSamples];
             }
 
             // Append new samples to buffer
@@ -67,6 +68,8 @@ class PitchProcessor extends AudioWorkletProcessor {
 
         if (this.totalSamples > this.numAudioSamplesPerAnalysis && this.detector) {
             const result = this.detector.detect_pitch(this.samples);
+
+            console.log(`Pitch: ${result}`);
 
             if (result !== 0) {
                 this.port.postMessage({ type: "pitch", pitch: result });
