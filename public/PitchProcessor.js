@@ -1,5 +1,7 @@
 import init, { WasmPitchDetector } from "./wasm-audio/wasm_audio.js";
 
+
+// AudioWorkletProcessor creates an audio processor running on its own thread.
 class PitchProcessor extends AudioWorkletProcessor {
     constructor() {
         super();
@@ -75,3 +77,6 @@ class PitchProcessor extends AudioWorkletProcessor {
         return true;
     }
 }
+
+// Create a processor that will run on its own thread
+registerProcessor("PitchProcessor", PitchProcessor);
