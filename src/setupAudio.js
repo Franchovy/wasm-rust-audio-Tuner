@@ -37,7 +37,7 @@ export async function setupAudio(onPitchDetectedCallback) {
 
     try {
         // Fetch pitch detection web assembly module
-        const response = await window.fetch("wasm-audio/wasm-audio-bg.wasm");
+        const response = await window.fetch("wasm-audio/wasm_audio_bg.wasm");
         const wasmBytes = await response.arrayBuffer();
 
         // Add processor to context
